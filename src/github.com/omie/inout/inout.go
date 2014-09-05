@@ -28,13 +28,17 @@ func simpleFileRead(filename string) {
     fcontents, err := ioutil.ReadFile(filename)
     check(err)
     //fcontents is a byte array
-    fmt.Print(fcontents)
+    fmt.Println(fcontents)
+    s := string(fcontents[:])
+    fmt.Println(s)
 }
 
 func simpleFileWrite(infile, outfile string) {
     fcontents, err := ioutil.ReadFile(infile)
     check(err)
-    err = ioutil.WriteFile(outfile, fcontents, 0644)
+    s := string(fcontents[:])
+    s += "I added this later"
+    err = ioutil.WriteFile(outfile, []byte(s), 0644)
     check(err)
 }
 
