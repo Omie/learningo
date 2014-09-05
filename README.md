@@ -9,5 +9,6 @@ newmath :   library. Sqrt function
 
 cmd     :   command line parser
 
+inout   :   simple input output, fileio
 
 
